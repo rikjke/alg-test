@@ -17,7 +17,6 @@ export default {
   name: 'App',
   methods: {
     setFirstWord(e) {
-      console.log(e)
       this.firstWord = e.path[0].value.toLowerCase();
     },
     setSecondWord(e) {
@@ -49,15 +48,15 @@ export default {
         }
 
         if (fw2 - sw1 > sw2 - fw1 && fw1 && fw2 && sw1 && sw2) {
-          this.maxDistance = fw2 - sw1
+          this.maxDistance = fw2 - sw1 - 1
         } else {
-          this.maxDistance = sw2 - fw1
+          this.maxDistance = sw2 - fw1 - 1
         }
        if (minDifference == words.length) {
           this.minDistance = 'Совпадений нет'
           this.maxDistance = 'Совпадений нет'
         } else {
-          this.minDistance = minDifference
+          this.minDistance = minDifference - 1
         }
       }
     
